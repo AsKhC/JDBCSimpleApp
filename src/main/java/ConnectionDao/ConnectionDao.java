@@ -19,7 +19,7 @@ public class ConnectionDao {
 		
 		try {
 			connection = DriverManager.getConnection(url, username, password); 
-			System.out.println("Connection is set!");
+			System.out.println("Connection is set!\n");
 		} catch (SQLException e){
 			e.getMessage();
 		}
