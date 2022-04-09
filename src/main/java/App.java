@@ -18,30 +18,36 @@ public class App {
 		int numberOfOperation;
 		
 		
-		do {
-			numberOfOperation = chooseOperation();
-			
+		do {numberOfOperation = chooseOperation();
 			if (numberOfOperation == 1) {
 				System.out.println("Number is 1");
 				dbOperations.operationExecuteUpdate();
-			} else if (numberOfOperation == 2) {
+			}else if (numberOfOperation == 2) {
 				System.out.println("Number is 2");
-			} else {
-				System.out.println("Error on choosing operation number!");
+				dbOperations.updateById();;
+			}else if (numberOfOperation == 3) {
+				System.out.println("Number is 3");
+			}else if (numberOfOperation == 4) {
+				System.out.println("Number is 4");
+			}else if (numberOfOperation == 5) {
+				System.out.println("Number is 5");
+				dbOperations.showAllData();
 			}
-		} while (numberOfOperation != 1 & numberOfOperation != 2);
-		
-
-		
-		
-		
+			else if(numberOfOperation != 0){
+				System.out.println("Error on choosing operation!");
+			}
+		} while(numberOfOperation != 0);
 	}
 	
 	public static int chooseOperation() {
 		System.out.println("Hello! What do we do with DB? \n"
 				+ "Choose operation:\n"
 				+ "1. Add new data\n"
-				+ "2. Show data by id\n");
+				+ "2. Update data by id\n"
+				+ "3. Delete data by id\n"
+				+ "4. Show data by id\n"
+				+ "5. Show all data\n"
+				+ "0. Exit\n");
 		int back = scanner.nextInt();
 		return back;
 	}
